@@ -1,0 +1,29 @@
+<style type="text/css">
+  .container {
+    margin: 20px auto;
+    width: 600px;
+    padding: 0px 20px 20px 20px;
+    border: 1px dotted black;
+  }
+  th {
+    text-align: left;
+  }
+</style>
+
+<h1>Shorten Url</h1>
+
+<form action='/urls' method='post'>
+
+  <label for='long'>Url to shorten:</label>
+  <input type='text' name='long' id='long'>
+
+  <input type='submit' name='submit' value='Shorten Url'>
+</form>
+
+<h1>All Shortened Urls:</h1>
+
+<ul>
+<% @urls.each do |url| %>
+  <li>Url: <%= url.short %> Click Count: <%= url.click_count %></li>
+<% end %>
+</ul>
